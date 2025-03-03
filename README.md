@@ -143,16 +143,17 @@ def create_tables():
         students.append(student)
 
 ## functions were called
-create_database()
-create_tables()
-insert_fake_data(100)
-print("MySQL database created and populated with fake data including programming, soft skills, and placements!")
-        if (i + 1) % batch_size == 0:  # Insert in batches
-            cursor.executemany('''
-            INSERT INTO Students (name, age, gender, email, phone, enrollment_year, course_batch, city, graduation_year)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)''', students)
-            conn.commit()
-            students = []  # Clear batch
+
+    create_database()
+    create_tables()
+    insert_fake_data(100)
+    print("MySQL database created and populated with fake data including programming, soft skills, and placements!")
+            if (i + 1) % batch_size == 0:  # Insert in batches
+                cursor.executemany('''
+                INSERT INTO Students (name, age, gender, email, phone, enrollment_year, course_batch, city, graduation_year)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)''', students)
+                conn.commit()
+                students = []  # Clear batch
 
     conn.commit() 
     conn.close()
