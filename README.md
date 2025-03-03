@@ -4,16 +4,20 @@
 !pip install faker
 !pip install streamlit
 #Execute these two commands and make sure no errots
+
 #Import modules required
 import mysql.connector
 import faker
 import random
 import streamlit as st
 import pandas as pd
+
 #Check at this point whether no errors reported
 #Initialize fake for further use
 fake = faker.Faker()
+
 #connect with MySQL here we are using the parameters and varaibles as dictornay
+
 DB_CONFIG = {
     "host": "localhost",
     "user": "root",
@@ -22,6 +26,8 @@ DB_CONFIG = {
 }
 
 #Define the connection string. This can be called appropriately
+
+
 def get_db_connection():
     return mysql.connector.connect(**DB_CONFIG)
 
