@@ -28,34 +28,34 @@
 #Define the connection string. This can be called appropriately
 
 
-def get_db_connection():
-    return mysql.connector.connect(**DB_CONFIG)
+    def get_db_connection():
+        return mysql.connector.connect(**DB_CONFIG)
 
 ###########CReate databased and tables written as function code
-def create_database():
-    conn = mysql.connector.connect(host=DB_CONFIG["host"], user=DB_CONFIG["user"], password=DB_CONFIG["password"])
-    cursor = conn.cursor()
-    cursor.execute("CREATE DATABASE IF NOT EXISTS placement_db")
-    conn.close()
+    def create_database():
+        conn = mysql.connector.connect(host=DB_CONFIG["host"], user=DB_CONFIG["user"], password=DB_CONFIG["password"])
+        cursor = conn.cursor()
+        cursor.execute("CREATE DATABASE IF NOT EXISTS placement_db")
+        conn.close()
 
-def create_tables():
-    conn = get_db_connection()
-    cursor = conn.cursor()
+    def create_tables():
+        conn = get_db_connection()
+        cursor = conn.cursor()
     
     # Create Students table
-    cursor.execute('''
-    CREATE TABLE IF NOT EXISTS Students (
-        student_id INT AUTO_INCREMENT PRIMARY KEY,
-        name VARCHAR(100),
-        age INT,
-        gender VARCHAR(10),
-        email VARCHAR(100),
-        phone VARCHAR(10),
-        enrollment_year INT,
-        course_batch VARCHAR(50),
-        city VARCHAR(50),
-        graduation_year INT
-    )''')
+        cursor.execute('''
+        CREATE TABLE IF NOT EXISTS Students (
+            student_id INT AUTO_INCREMENT PRIMARY KEY,
+            name VARCHAR(100),
+            age INT,
+            gender VARCHAR(10),
+            email VARCHAR(100),
+            phone VARCHAR(10),
+            enrollment_year INT,
+            course_batch VARCHAR(50),
+            city VARCHAR(50),
+            graduation_year INT
+        )''')
     
     # Create Programming table
     cursor.execute('''
