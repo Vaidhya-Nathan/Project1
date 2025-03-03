@@ -14,16 +14,16 @@
 
 #Check at this point whether no errors reported
 #Initialize fake for further use
-    fake = faker.Faker()
+        fake = faker.Faker()
 
 #connect with MySQL here we are using the parameters and varaibles as dictornay
 
-    DB_CONFIG = {
-        "host": "localhost",
-        "user": "root",
-        "password": "12345678",
-        "database": "placement_db"
-    }
+        DB_CONFIG = {
+            "host": "localhost",
+            "user": "root",
+            "password": "12345678",
+            "database": "placement_db"
+        }
 
 #Define the connection string. This can be called appropriately
 
